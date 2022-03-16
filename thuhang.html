@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nach der Karte</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+    <script src="jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="220311_data.js"></script>
+
+    <template id="story-template">
+      <div class="story-wrapper">
+        
+          <div class="story-header">
+            <a class="close">
+              &larr;  
+            <span class="name"></span>
+            
+          </a>
+          </div>
+          <br/>
+          <div class="content"></div>
+      </div>
+    </template>
+  </head>
+
+  <div id="main-story"></div>
+  <iframe src='https://my.spline.design/tableundermyfeetgraphicslices-5054e48e34f95c69e981f0eca79f2cd3/' frameborder='0' width='100%' height='100%'></iframe>
+
+
+
+
+  <script>
+    const fragment = document.getElementById("story-template");
+    
+
+    storys.forEach((story) => {
+        if(story.name == "thuhang"){
+        // Create an instance of the template content
+        const instance = document.importNode(fragment.content, true);
+        // Add relevant content to the template
+        instance.querySelector(".name").innerHTML = story.storyname;
+        instance.querySelector(".content").innerHTML = story.content;
+        instance.querySelector(".story-wrapper").id = story.id;
+        story.flag = "true";
+        if((story.id % 2) == 1 ){
+          instance.querySelector("#\\3"+story.id).style.backgroundColor = "#fafafa";
+        }
+        else if ((story.id % 2) == 0 ){
+          instance.querySelector("#\\3"+story.id).style.backgroundColor = "#faf5f4";
+        }
+        // Append the instance ot the DOM
+        document.getElementById("main-story").appendChild(instance);
+        var clsbtn = document
+          .getElementById("" + story.id)
+          .getElementsByClassName("close")[0];
+        clsbtn.href = "./index.html"
+    }
+    });
+
+    function filterByName(name, hash) {
+      storys.forEach((story) => {
+        if (story.name.includes(name) && story.flag == "false") {
+          // Create an instance of the template content
+          const instance = document.importNode(fragment.content, true);
+          // Add relevant content to the template
+          instance.querySelector(".name").innerHTML = story.storyname;
+          instance.querySelector(".content").innerHTML = story.content;
+          instance.querySelector(".story-wrapper").id = story.id;
+          // Append the instance ot the DOM
+          document.getElementById("other-story").appendChild(instance);
+          var clsbtn = document
+            .getElementById("" + story.id)
+            .getElementsByClassName("close")[0];
+          clsbtn.addEventListener("click", function () {
+            close("" + story.id);
+          });
+
+          story.flag = "true";
+        }
+        scrollTo(hash);
+      });
+    }
+
+    function filterByTag(tag, hash) {
+      storys.forEach((story) => {
+        if (story.tag.includes(tag) && story.flag == "false") {
+          // Create an instance of the template content
+          const instance = document.importNode(fragment.content, true);
+          // Add relevant content to the template
+          instance.querySelector(".name").innerHTML = story.name;
+          instance.querySelector(".content").innerHTML = story.content;
+          instance.querySelector(".story-wrapper").id = story.id;
+          // Append the instance ot the DOM
+          document.getElementById("other-story").appendChild(instance);
+          var clsbtn = document
+            .getElementById("" + story.id)
+            .getElementsByClassName("close")[0];
+          clsbtn.addEventListener("click", function () {
+            close("" + story.id);
+          });
+
+          story.flag = "true";
+        }
+        scrollTo(hash);
+      });
+    }
+
+    
+
+
+    function closeFirst(id) {
+      var firstOther = document.getElementById("other-story").firstChild;
+      document.getElementById("main-story").firstChild.replaceWith(firstOther);
+      console.log(document.getElementById("other-story").firstChild);
+      
+    }
+
+    function close(id) {
+      document.getElementById("other-story").removeChild(document.getElementById(id));
+      storys.forEach((story) => {
+        if (story.id.includes(id)) {
+          story.flag = "false";
+        }
+      });
+    }
+  </script>
+</html>
