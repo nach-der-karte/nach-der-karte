@@ -67,7 +67,7 @@ a {
   padding-left: 24px;
 }
 .content {
-  margin-top: 96px;
+  margin-top: 72px;
 }
 .name {
   padding-left: 36px;
@@ -145,4 +145,8 @@ audio {
   left: 0;
   position: absolute;
   top: 48px;
+}
+
+.inline-img {
+  width: 100%;
 }
