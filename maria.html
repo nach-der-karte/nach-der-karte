@@ -6,16 +6,17 @@
     <title>Nach der Karte</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+    <script src="220311_data.js"></script>   
     <script src="jquery/3.5.1/jquery.min.js"></script>
     <script src="main.js"></script>
-    <script src="220311_data.js"></script>
+    
 
     <template id="story-template">
       <div class="story-wrapper">
         
           <div class="story-header">
             <a class="close">
-              <span style="color:blue">○</span>  
+            <span style="color:blue">○</span>  
             <span class="name"></span>
             
           </a>
@@ -45,12 +46,6 @@
         instance.querySelector(".content").innerHTML = story.content;
         instance.querySelector(".story-wrapper").id = story.id;
         story.flag = "true";
-        if((story.id % 2) == 1 ){
-          instance.querySelector("#\\3"+story.id).style.backgroundColor = "#fafafa";
-        }
-        else if ((story.id % 2) == 0 ){
-          instance.querySelector("#\\3"+story.id).style.backgroundColor = "#faf5f4";
-        }
         // Append the instance ot the DOM
         document.getElementById("main-story").appendChild(instance);
         var clsbtn = document
