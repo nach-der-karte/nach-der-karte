@@ -46,7 +46,7 @@
         instance.querySelector(".story-wrapper").id = story.id;
         story.flag = "true";
         if((story.id % 2) == 1 ){
-          instance.querySelector("#\\3"+story.id).style.backgroundColor = "#fafafa";
+          instance.querySelector(".story-wrapper").style.backgroundColor = "#fafafa";
         }
         // Append the instance ot the DOM
         document.getElementById("main-story").appendChild(instance);
