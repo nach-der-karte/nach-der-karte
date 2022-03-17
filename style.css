@@ -133,8 +133,7 @@ html {
 
   iframe, .story-img{
     float: left;
-width: 70vw;
-height: auto;
-min-height: 100vh;
-
+    width: 70vw;
+    height: 100vh;
+    object-fit: cover;
   }
