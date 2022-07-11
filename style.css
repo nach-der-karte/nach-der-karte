@@ -82,13 +82,13 @@ a {
 }
 @media screen and (max-width: 768px) {
     .story-header {
-        width: calc(45vw - 24px);
+        width: 45vw;
     }
 }
 
 @media screen and (max-width: 480px) {
     .story-header {
-        width: calc(90vw - 24px);
+        width: 90vw;
     }
 }
 .content {
