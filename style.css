@@ -2,10 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    overflow-x: scroll;
-    overflow-y: hidden;
     width: auto;
-    max-height: 100vh;
     font-family: "Times New Roman";
     font-size: 21px;
     margin: 0;
@@ -37,8 +34,6 @@ body {
 #main-story,
 #other-story {
     width: fit-content;
-    overflow-x: scroll;
-    overflow-y: hidden;
     display: flex;
     float: left;
 }
@@ -48,8 +43,6 @@ body {
     max-width: 480px;
     padding-left: 24px;
     padding-right: 24px;
-    height: 100vh;
-    overflow-y: scroll;
 }
 @media screen and (max-width: 768px) {
     .story-wrapper {
@@ -73,12 +66,13 @@ a {
     height: 36px;
     position: absolute;
     width: calc(30vw - 24px);
-    max-width: 480px;
+    max-width: 504px;
     background-color: white;
     padding-top: 16px;
     margin-left: -24px;
     padding-left: 24px;
     color:#382d1b;
+    position: fixed;
 }
 @media screen and (max-width: 768px) {
     .story-header {
