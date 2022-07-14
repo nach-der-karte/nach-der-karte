@@ -161,8 +161,12 @@ span.Apple-tab-span {
     color: #0000ff !important;
 }
 
-.top{
+.top {
     top: 0 !important;
+}
+
+.full {
+    width: 100vw !important;
 }
 
 iframe,
