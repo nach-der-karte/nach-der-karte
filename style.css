@@ -61,6 +61,10 @@ body {
     .story-wrapper {
         width: calc(90vw - 24px);
     }
+    #main-story{
+        position: absolute;
+        top: 30vh;
+    }
 }
 button {
     float: left;
@@ -169,11 +173,17 @@ iframe,
     .story-img{
         float: none;
         width: 55vw;
-        height: 100vh;
+        height: auto;
         object-fit: contain;
         position: absolute;
         top: 0;
         left: calc(45vw + 24px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .story-img{
+        max-height: 30vh;
     }
 }
 
