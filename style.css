@@ -94,6 +94,9 @@ a {
     .story-header {
         width: 90vw;
     }
+    .full {
+        width: 100vw !important;
+    }
 }
 .content {
     margin-top: 72px;
@@ -165,9 +168,6 @@ span.Apple-tab-span {
     top: 0 !important;
 }
 
-.full {
-    width: 100vw !important;
-}
 
 iframe,
 .story-img {
