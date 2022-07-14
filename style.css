@@ -189,6 +189,7 @@ iframe,
     .story-img{
         width: 100vw;
         max-height: 30vh;
+        left: 0;
     }
 }
 
