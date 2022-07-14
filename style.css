@@ -183,6 +183,7 @@ iframe,
 
 @media screen and (max-width: 480px) {
     .story-img{
+        width: 100vw;
         max-height: 30vh;
     }
 }
