@@ -165,6 +165,18 @@ iframe,
     object-fit: cover;
 }
 
+@media screen and (max-width: 768px) {
+    .story-img{
+        float: none;
+        width: 55vw;
+        height: 100vh;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: calc(45vw + 24px);
+    }
+}
+
 audio {
     width: 30vw;
     left: 0;
