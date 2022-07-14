@@ -161,6 +161,10 @@ span.Apple-tab-span {
     color: #0000ff !important;
 }
 
+.top{
+    top: 0 !important;
+}
+
 iframe,
 .story-img {
     float: left;
